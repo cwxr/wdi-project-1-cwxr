@@ -2,18 +2,50 @@
 <html>
   <head>
     <meta charset="utf-8">
-
-    <title></title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Delius+Unicase" rel="stylesheet">
     <title>My WDI Project 1</title>
-    
+
   </head>
   <body>
 
-<div class="container">
-<h1>My 1st Game</h1>
 
+<h1>Matchie</h1>
+<p id="timer">Time for Game</p>
+<p id="getTime">Time Remaining:</p>
+<p>Your score is:</p>
+<p id="getScore"></p>
+
+<div class="button">
+    <button id="start">Start</button>
+</div>
+
+<div id ="black" class="dropzone"></div>
+<br>
+<br>
+<div id="happy" class="dropzone"></div>
+<br>
+<br>
+<div id="fast" class="dropzone"></div>
+<br>
+<br>
+
+<div class="qns">
+  <img id="white" class="question" src="http://i.imgur.com/baYt0TP.png" draggable="false">
+  <img id="sad" class="question" src="http://i.imgur.com/cxGMK8g.png" draggable="false">
+  <img id="slow" class="question" src="http://i.imgur.com/emEhP77.png" draggable="false">
 
 </div>
+
+<div id="containerBox">
+  <img id="black" class="answer" src="http://i.imgur.com/3MiuflE.jpg" draggable="true" ondragstart="event.dataTransfer.setData('text')">
+  <img id="happy" class="answer" src="http://i.imgur.com/xz9SEsd.png" draggable="true" ondragstart="event.dataTransfer.setData('text')">
+  <img id="fast" class="answer" src="http://i.imgur.com/uPOtG17.png" draggable="true" ondragstart="event.dataTransfer.setData('text')">
+</div>
+
+
+
+
+    <script src="script.js" charset="utf-8"></script>
   </body>
 </html>

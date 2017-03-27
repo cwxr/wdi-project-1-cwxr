@@ -1,3 +1,78 @@
-body {
-  background-color: blue;
+* {
+  box-sizing: border-box;
+  font-family: 'Delius Unicase', cursive;
+}
+.containerBox {
+  margin: 0 auto;
+  width: 600px;
+  height: 200px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+  .question {
+
+    bottom: 620px;
+    left: 500px;
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
+
+  .answer {
+    top: 110px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 90%;
+  border: 2px solid black;
+  text-align: center;
+
+}
+
+.dropzone {
+  position: relative;
+  left: 300px;
+  background-color: lightblue;
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  padding: 10px;
+
+}
+
+.qns {
+  position: relative;
+  left: 50px;
+  bottom: 550px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+button {
+  background: #4479BA;
+  color: #FFF;
+  font-size: 50px;
+  text-align: center;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 2px 2px black;
+}
+
+button:hover{
+    background: #356094;
+}
+
+.white {
+  background-image: url("http://i.imgur.com/baYt0TP.png");
 }
