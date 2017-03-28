@@ -16,7 +16,12 @@ body {
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
+}
 
+#gameStatus {
+  font-size: 30px;
+  font-style: italic;
+  color: red;
 }
 
 #answerTitle {
@@ -63,8 +68,7 @@ body {
 
 
 .dropzone {
-
-  background-color: lightblue;
+  background-color: #FFD166;
   width: 150px;
   height: 150px;
   border: 1px solid black;

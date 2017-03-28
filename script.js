@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
     // function countdown ()
-    var counter = 20
+    var counter = 30
     var timer
     var startButton = document.getElementById('start')
     startButton.addEventListener('click', function () {
-      counter = 20
+      counter = 30
       $('.qns').show()
       timer = setInterval(function () {
         counter--
