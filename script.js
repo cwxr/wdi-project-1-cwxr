@@ -1,89 +1,121 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var dragged
-  var score = 0
+  $(document).ready(function () {
+    var dragged
+    var score = 0
 
-  function countScore () {
-    score++
-    finalScore = document.getElementById('getScore')
-    finalScore.innerHTML = score
-    win()
-  }
-
-  function win () {
-    if (score == 3) {
-      alert('You got it all right!')
+    function countScore () {
+      score++
+      finalScore = document.getElementById('getScore')
+      finalScore.innerHTML = score
+      win()
     }
-  }
 
-  function restart () {}
-
-  function gameOver () {
-    if (win()) {
-      return true
-    } else {
-      return false
-    }
-  }
-
-  // function countdown ()
-  var counter = 60
-  var timer
-  document.addEventListener('click', function () {
-    timer = setInterval(function () {
-      counter--
-      counterTime = document.getElementById('getTime')
-      counterTime.innerHTML = counter
-      if (counter === 0) {
+    function win () {
+      if (score == 3) {
+        winMsg = document.getElementById('gameStatus')
+        winMsg.innerHTML = 'Congratulations you are a genius!'
         clearInterval(timer)
-      }
-    }, 1000)
-  })
-
-  document.addEventListener('drag', function (event) {
-
-  }, false)
-
-    document.addEventListener('dragstart', function (event) {
-          dragged = event.target
-    console.log(dragged)
-          event.target.style.opacity = 0.5
-    }, false)
-
-    document.addEventListener('dragend', function (event) {
-          event.target.style.opacity = ''
-    }, false)
-
-    document.addEventListener('dragover', function (event) {
-          event.preventDefault()
-    }, false)
-
-// black & white
-    document.addEventListener('dragenter', function (event) {
-    event.target.className == 'dropzone'
-    if (event.target.className == 'dropzone') {
-              event.target.style.background = 'red'
-          }
-    }, false)
-
-    document.addEventListener('dragleave', function (event) {
-          if (event.target.className == 'dropzone') {
-              event.target.style.background = ''
-          }
-    }, false)
-
-    document.addEventListener('drop', function (event) {
-          event.preventDefault()
-    // console.log(dragged.parentNode)
-    if (event.target.className == 'dropzone') {
-      if (event.target.id == dragged.id) {
-        countScore()
-
-                  event.target.style.background = ''
-                  dragged.parentNode.removeChild(dragged)
-                  event.target.appendChild(dragged)
+        // alert('You got it all right!')
+        // restart()
       }
     }
-    }, false)
+
+    function lose () {
+      if (counter === 0 && score < 3) {
+        alert('Please try again')
+        restart()
+      }
+    }
+    // function countdown ()
+    var counter = 20
+    var timer
+    var startButton = document.getElementById('start')
+    startButton.addEventListener('click', function () {
+      counter = 20
+      $('.qns').show()
+      timer = setInterval(function () {
+        counter--
+        counterTime = document.getElementById('getTime')
+        counterTime.innerHTML = counter
+        if (counter === 0) {
+          clearInterval(timer)
+          lose()
+        }
+      }, 1000)
+    })
+    function restart () {
+      winMsg = document.getElementById('gameStatus')
+      winMsg.textContent = 'Game Status'
+      counterTime = document.getElementById('getTime')
+      counterTime.textContent = 'Time Remaining:'
+      finalScore = document.getElementById('getScore')
+      finalScore.textContent = ''
+      clearInterval(timer)
+  // return all answers back to original position
+      var containerBox = document.getElementById('containerBox')
+      var answers = document.querySelectorAll('.answer')
+      answers.forEach(function (elm) {
+        containerBox.appendChild(elm)
+      })
+    }
+      // restart all values back to start
+    var restartButton = document.getElementById('restart')
+    restartButton.addEventListener('click', function () {
+      $('.qns').hide()
+      restart()
+    })
+
+    function gameOver () {
+      if (win() || counter === 0) {
+        return true
+      } else {
+        return false
+      }
+    }
+
+    document.addEventListener('drag', function (event) {
+
+    }, false)
+
+    document.addEventListener('dragstart', function (event) {
+      dragged = event.target
+      event.target.style.opacity = 0.5
+    }, false)
+
+    document.addEventListener('dragend', function (event) {
+      event.target.style.opacity = 1
+    }, false)
+
+    document.addEventListener('dragover', function (event) {
+      event.preventDefault()
+    }, false)
+
+    document.addEventListener('dragenter', function (event) {
+      event.target.className == 'dropzone'
+      if (event.target.className == 'dropzone') {
+        event.target.style.background = 'red'
+      }
+    }, false)
+
+    document.addEventListener('dragleave', function (event) {
+      if (event.target.className == 'dropzone') {
+        event.target.style.background = ''
+      }
+    }, false)
+
+    document.addEventListener('drop', function (event) {
+      event.preventDefault()
+      // console.log(dragged.parentNode)
+      if (event.target.className == 'dropzone') {
+        if (event.target.id == dragged.id) {
+          countScore()
+          event.target.style.background = ''
+          dragged.parentNode.removeChild(dragged)
+          event.target.appendChild(dragged)
+        }
+      }
+    }, false)
+  })
 })
 
 // happy sad

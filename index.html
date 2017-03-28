@@ -9,15 +9,23 @@
   </head>
   <body>
 
-
-<h1>Matchie</h1>
-<p id="timer">Time for Game</p>
-<p id="getTime">Time Remaining:</p>
-<p>Your score is:</p>
-<p id="getScore"></p>
+<div class="header">
+  <h1>Matchie</h1>
+  <br>
+  <h2 id="gameStatus">Game Status</h2>
+  <br>
+  <p id="timer">Time for Game</p>
+  <p id="getTime">Time Remaining:</p>
+  <p>Your score is:</p>
+  <p id="getScore"></p>  
+</div>
 
 <div class="button">
     <button id="start">Start</button>
+</div>
+
+<div class="button">
+    <button id="restart">Restart</button>
 </div>
 
 <div id ="black" class="dropzone"></div>
@@ -38,14 +46,12 @@
 </div>
 
 <div id="containerBox">
-  <img id="black" class="answer" src="http://i.imgur.com/3MiuflE.jpg" draggable="true" ondragstart="event.dataTransfer.setData('text')">
-  <img id="happy" class="answer" src="http://i.imgur.com/xz9SEsd.png" draggable="true" ondragstart="event.dataTransfer.setData('text')">
-  <img id="fast" class="answer" src="http://i.imgur.com/uPOtG17.png" draggable="true" ondragstart="event.dataTransfer.setData('text')">
+  <img id="black" class="answer" src="http://i.imgur.com/3MiuflE.jpg" draggable="true">
+  <img id="happy" class="answer" src="http://i.imgur.com/xz9SEsd.png" draggable="true">
+  <img id="fast" class="answer" src="http://i.imgur.com/uPOtG17.png" draggable="true">
 </div>
 
-
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js" charset="utf-8"></script>
   </body>
 </html>
