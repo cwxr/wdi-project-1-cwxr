@@ -11,45 +11,74 @@
 
 <div class="header">
   <h1>Matchie</h1>
-  <br>
   <h2 id="gameStatus">Game Status</h2>
-  <br>
-  <p id="timer">Time for Game</p>
-  <p id="getTime">Time Remaining:</p>
+  <p id="timer">Time Remaining:</p>
+  <p id="getTime"></p>
   <p>Your score is:</p>
-  <p id="getScore"></p>  
+  <p id="getScore"></p>
 </div>
 
 <div class="button">
     <button id="start">Start</button>
-</div>
-
-<div class="button">
     <button id="restart">Restart</button>
 </div>
+<div class="mainQns">
 
-<div id ="black" class="dropzone"></div>
-<br>
-<br>
-<div id="happy" class="dropzone"></div>
-<br>
-<br>
-<div id="fast" class="dropzone"></div>
-<br>
-<br>
-
-<div class="qns">
+<div id="blackWhite" class="questionBox">
   <img id="white" class="question" src="http://i.imgur.com/baYt0TP.png" draggable="false">
+  <div id ="black" class="dropzone"></div>
+</div>
+
+<div id="sadHappy" class="questionBox">
   <img id="sad" class="question" src="http://i.imgur.com/cxGMK8g.png" draggable="false">
+  <div id ="happy" class="dropzone"></div>
+</div>
+
+<div id="slowFast" class="questionBox">
   <img id="slow" class="question" src="http://i.imgur.com/emEhP77.png" draggable="false">
-
+  <div id ="fast" class="dropzone"></div>
 </div>
 
+<div id="oldNew" class="questionBox">
+  <img id="old" class="question" src="http://i.imgur.com/lo49Mk6.png" draggable="false">
+  <div id ="new" class="dropzone"></div>
+</div>
+
+<div id="coldHot" class="questionBox">
+  <img id="cold" class="question" src="http://i.imgur.com/zRpfiBe.png" draggable="false">
+  <div id ="hot" class="dropzone"></div>
+</div>
+
+<div id="dayNight" class="questionBox">
+  <img id="day" class="question" src="http://i.imgur.com/lVimLGG.png" draggable="false">
+  <div id ="night" class="dropzone"></div>
+</div>
+
+<div id="hungryFull" class="questionBox">
+  <img id="hungry" class="question" src="http://i.imgur.com/7DOrTke.png" draggable="false">
+  <div id ="full" class="dropzone"></div>
+</div>
+
+<div id="workPlay" class="questionBox">
+  <img id="work" class="question" src="http://i.imgur.com/90Xwd9t.png" draggable="false">
+  <div id ="play" class="dropzone"></div>
+</div>
+
+</div>
+<h2 id="answerTitle">Find the possible answers</h2>
 <div id="containerBox">
-  <img id="black" class="answer" src="http://i.imgur.com/3MiuflE.jpg" draggable="true">
-  <img id="happy" class="answer" src="http://i.imgur.com/xz9SEsd.png" draggable="true">
   <img id="fast" class="answer" src="http://i.imgur.com/uPOtG17.png" draggable="true">
+  <img id="new" class="answer" src="http://i.imgur.com/TMullWV.png" draggable="true">
+  <img id="black" class="answer" src="http://i.imgur.com/3MiuflE.jpg" draggable="true">
+  <img id="night" class="answer" src="http://i.imgur.com/QU9KsQQ.png" draggable="true">
+  <img id="full" class="answer" src="http://i.imgur.com/Tseh6iu.png" draggable="true">
+  <img id="hot" class="answer" src="http://i.imgur.com/pkzAcg1.png" draggable="true">
+  <img id="play" class="answer" src="http://i.imgur.com/Tm21Gva.png" draggable="true">
+  <img id="happy" class="answer" src="http://i.imgur.com/xz9SEsd.png" draggable="true">
 </div>
+
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js" charset="utf-8"></script>

@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function win () {
       if (score == 3) {
-        winMsg = document.getElementById('gameStatus')
-        winMsg.innerHTML = 'Congratulations you are a genius!'
+        playerMsg = document.getElementById('gameStatus')
+        playerMsg.innerHTML = 'Congratulations you are a genius!'
         clearInterval(timer)
         // alert('You got it all right!')
         // restart()
@@ -22,8 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function lose () {
       if (counter === 0 && score < 3) {
-        alert('Please try again')
-        restart()
+        playerMsg = document.getElementById('gameStatus')
+        playerMsg.innerHTML = 'Please try again!'
+        // restart()
       }
     }
     // function countdown ()
@@ -44,13 +45,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 1000)
     })
     function restart () {
-      winMsg = document.getElementById('gameStatus')
-      winMsg.textContent = 'Game Status'
+      playerMsg = document.getElementById('gameStatus')
+      playerMsg.textContent = 'Game Status'
       counterTime = document.getElementById('getTime')
-      counterTime.textContent = 'Time Remaining:'
+      counterTime.textContent = ''
       finalScore = document.getElementById('getScore')
       finalScore.textContent = ''
       clearInterval(timer)
+      score = 0
   // return all answers back to original position
       var containerBox = document.getElementById('containerBox')
       var answers = document.querySelectorAll('.answer')
@@ -73,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    document.addEventListener('drag', function (event) {
-
-    }, false)
+    // document.addEventListener('drag', function (event) {
+    //
+    // }, false)
 
     document.addEventListener('dragstart', function (event) {
       dragged = event.target
@@ -91,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, false)
 
     document.addEventListener('dragenter', function (event) {
-      event.target.className == 'dropzone'
+      // event.target.className == 'dropzone'
       if (event.target.className == 'dropzone') {
         event.target.style.background = 'red'
       }
@@ -105,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('drop', function (event) {
       event.preventDefault()
-      // console.log(dragged.parentNode)
       if (event.target.className == 'dropzone') {
         if (event.target.id == dragged.id) {
           countScore()
