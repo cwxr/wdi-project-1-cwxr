@@ -11,6 +11,7 @@ It is built on the basis of the drag and drop logic for the player to drag the c
 [Play the game here](https://wdi-sg.github.io/wdi-project-1-cwxr)
 
 **Getting Started**
+
 1) Click on the Start button to start game.
 2) Start by clicking and dragging the correct answers images to the question box given and dropping it.
 3) Score a point by getting a correct image matched within the given time.
