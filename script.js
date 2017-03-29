@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
   $(document).ready(function () {
     var dragged
     var score = 0
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function win () {
       if (score == 8) {
-        playerMsg = document.getElementById('gameStatus')
+        changeGameStatus()
         playerMsg.innerHTML = 'Congratulations you are a genius!'
         clearInterval(timer)
       }
@@ -21,17 +20,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function lose () {
       if (counter === 0 && score < 8) {
-        playerMsg = document.getElementById('gameStatus')
+        changeGameStatus()
         playerMsg.innerHTML = 'Please try again!'
       }
     }
-    // function countdown ()
+    // countdown timer & Start button
     var counter = 30
     var timer
     var startButton = document.getElementById('start')
     startButton.addEventListener('click', function () {
       counter = 30
       $('#containerBox').show()
+      $('audio')[0].play()
+
       timer = setInterval(function () {
         counter--
         counterTime = document.getElementById('getTime')
@@ -42,15 +43,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }, 1000)
     })
-    function restart () {
+    function changeGameStatus () {
       playerMsg = document.getElementById('gameStatus')
       playerMsg.textContent = 'Game Status'
+    }
+
+    function changeGetTime () {
       counterTime = document.getElementById('getTime')
       counterTime.textContent = ''
+    }
+
+    function changeGetScore () {
       finalScore = document.getElementById('getScore')
       finalScore.textContent = ''
+    }
+
+    function restart () {
+      changeGameStatus()
+      changeGetTime()
+      changeGetScore()
       clearInterval(timer)
       score = 0
+
   // return all answers back to original position
       var containerBox = document.getElementById('containerBox')
       var answers = document.querySelectorAll('.answer')
@@ -63,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
     restartButton.addEventListener('click', function () {
       $('#containerBox').hide()
       restart()
+      $('audio')[0].pause()
+      $('audio')[0].currentTime = 0
     })
 
     function gameOver () {
@@ -110,4 +126,3 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }, false)
   })
-})
