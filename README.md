@@ -2,7 +2,7 @@
 [How to write a good readme for github repo!](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
 
 # Project Name
-(http://i.imgur.com/C2WkIZD.png)
+![Matchie](http://i.imgur.com/C2WkIZD.png)
 
 **Description of Game**
 Matchie is a opposites matching game inspired by allowing children of all ages to learn.
@@ -18,10 +18,10 @@ It is built on the basis of the drag and drop logic for the player to drag the c
 4) Click on the restart button to start over.
 
 **Language Used**
-JavaScript
-Jquery
-HTML
-CSS
+* JavaScript
+* Jquery
+* HTML
+* CSS
 
 **References**
 I learned about drag and drop operations here: [Drag & Drop](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
