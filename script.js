@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   $(document).ready(function () {
     var dragged
     var score = 0
+    $('#containerBox').hide()
 
     function countScore () {
       score++
@@ -11,20 +12,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function win () {
-      if (score == 3) {
+      if (score == 8) {
         playerMsg = document.getElementById('gameStatus')
         playerMsg.innerHTML = 'Congratulations you are a genius!'
         clearInterval(timer)
-        // alert('You got it all right!')
-        // restart()
       }
     }
 
     function lose () {
-      if (counter === 0 && score < 3) {
+      if (counter === 0 && score < 8) {
         playerMsg = document.getElementById('gameStatus')
         playerMsg.innerHTML = 'Please try again!'
-        // restart()
       }
     }
     // function countdown ()
@@ -33,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var startButton = document.getElementById('start')
     startButton.addEventListener('click', function () {
       counter = 30
-      $('.qns').show()
+      $('#containerBox').show()
       timer = setInterval(function () {
         counter--
         counterTime = document.getElementById('getTime')
@@ -63,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // restart all values back to start
     var restartButton = document.getElementById('restart')
     restartButton.addEventListener('click', function () {
-      $('.qns').hide()
+      $('#containerBox').hide()
       restart()
     })
 
@@ -75,10 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    // document.addEventListener('drag', function (event) {
-    //
-    // }, false)
-
+    // drag and drop
     document.addEventListener('dragstart', function (event) {
       dragged = event.target
       event.target.style.opacity = 0.5
@@ -93,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, false)
 
     document.addEventListener('dragenter', function (event) {
-      // event.target.className == 'dropzone'
       if (event.target.className == 'dropzone') {
         event.target.style.background = 'red'
       }
@@ -106,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, false)
 
     document.addEventListener('drop', function (event) {
-      event.preventDefault()
       if (event.target.className == 'dropzone') {
         if (event.target.id == dragged.id) {
           countScore()
@@ -118,27 +111,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }, false)
   })
 })
-
-// happy sad
-
-  // document.addEventListener('dragenter', function (event) {
-  //         if (event.target.className == 'dropzone') {
-  //               event.target.style.background = 'red'
-  //         }
-  //   }, false)
-  //
-  //   document.addEventListener('dragleave', function (event) {
-  //         if (event.target.className == 'dropzone') {
-  //               event.target.style.background = ''
-  //         }
-  //   }, false)
-  //
-  //   document.addEventListener('drop', function (event) {
-  //         event.preventDefault()
-  //
-  //         if (event.target.className == 'dropzone') {
-  //               event.target.style.background = ''
-  //               dragged.parentNode.removeChild(dragged)
-  //               event.target.appendChild(dragged)
-  //         }
-  //   }, false)
